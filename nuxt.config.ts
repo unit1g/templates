@@ -26,7 +26,7 @@ export default defineNuxtConfig({
   },
   server: {
     host: '0.0.0.0', // Allow external connections
-    port: 3004,      // Set your desired port
+    port: 3003,      // Set your desired port
   },
   modules: [
     "@nuxtjs/tailwindcss",
