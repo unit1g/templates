@@ -5,7 +5,6 @@ export default defineNuxtConfig({
   tailwindcss: { exposeConfig: true, injectPosition: "last" },
   css: ["vue3-toastify/dist/index.css"],
   imports: {
-    // Add tv and VariantProps to the set of auto imported modules
     imports: [
       { from: "tailwind-variants", name: "tv" },
       { from: "vue3-toastify", name: "toast", as: "useToast" },
@@ -16,16 +15,18 @@ export default defineNuxtConfig({
     head: {
       title: "Templates",
       link: [
-        // Favicon
         { rel: "icon", type: "image/x-icon", href: "/icon.png" },
-        // Inter font
         { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
         { rel: "preconnect", href: "https://rsms.me/" },
       ],
     },
   },
   mongoose: {
-    uri: process.env.MONGODB_URI || "mongodb://localhost:27017/your_db_name",
+    uri: process.env.MONGODB_URI || "mongodb://root:lRWKZT4iJn8S8tX3Rud3kLc70qU9AJzwpQRJYwA5K7bOAYGexpmoRfo4vJGgw7RK@d0go8s8c80840gosgkkkcgs8:27017/?directConnection=true",
+  },
+  server: {
+    host: '0.0.0.0', // Allow external connections
+    port: 3004,      // Set your desired port
   },
   modules: [
     "@nuxtjs/tailwindcss",
